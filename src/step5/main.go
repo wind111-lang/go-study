@@ -20,7 +20,6 @@ func removeFirstLast(strSlice []string) []string {
 
 func getAllNameAndAge(strSlice map[string]int) []string {
 	var namesort []string
-	strSlice
 	return namesort
 }
 
