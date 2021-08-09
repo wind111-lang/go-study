@@ -18,10 +18,11 @@ func removeFirstLast(strSlice []string) []string {
 	return slice_remove
 }
 
-// func getAllNameAndAge(strSlice map[string]int) []string {
-// 	str := [5]string{"1","2","3","4","5"}
-// 	return str
-// }
+func getAllNameAndAge(strSlice map[string]int) []string {
+	var namesort []string
+	strSlice
+	return namesort
+}
 
 func main() {
 	arr := [3]int{0, 1, 2}     //配列
@@ -40,4 +41,12 @@ func main() {
 
 	slice_r := [...]string{"0", "1", "2", "3", "4"}
 	fmt.Println(removeFirstLast(slice_r[:]))
+
+	namelist := map[string]int{
+		"Taro":   12,
+		"Jiro":   19,
+		"Saburo": 18,
+	}
+
+	getAllNameAndAge(namelist)
 }

@@ -5,6 +5,27 @@
 // 引数に1~100を与えて実行してください．
 package main
 
-func main() {
+import (
+	"fmt"
+	"strconv"
+)
 
+func FizzBuzz(num int) string { //intで代入して、結果はstringで返す
+	if num%3 == 0 && num%5 == 0 {
+		return "FizzBuzz"
+	} else if num%3 == 0 {
+		return "Fizz"
+	} else if num%5 == 0 {
+		return "Buzz"
+	} else {
+		return strconv.Itoa(num) //intをstringに変換
+	}
+}
+
+func main() {
+	i := 1
+	for i <= 100 {
+		fmt.Println(FizzBuzz(i))
+		i++
+	}
 }
