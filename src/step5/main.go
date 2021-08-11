@@ -20,7 +20,7 @@ func removeFirstLast(strSlice []string) []string {
 	return slice_remove
 }
 
-func getAllNameAndAgeOrder(strSlice map[string]int) []string {
+func getAllNameAndAge(strSlice map[string]int) []string {
 	//キーのスライスを作成する
 	var keys []string
 	for key := range strSlice {
@@ -61,5 +61,5 @@ func main() {
 		"Saburo": 18,
 	}
 
-	getAllNameAndAgeOrder(namelist)
+	getAllNameAndAge(namelist)
 }

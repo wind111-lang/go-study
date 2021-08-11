@@ -40,7 +40,7 @@ func Test_main(t *testing.T) {
 		"Larry":   50,
 	}
 	// getAllNameAndAge関数を実行して，その結果を文字列の配列として返す
-	strSlice3 := getAllNameAndAgeOrder(nameAndAge)
+	strSlice3 := getAllNameAndAge(nameAndAge)
 	for k, v := range nameAndAge {
 		for i, s := range strSlice3 {
 			if strings.Contains(s, k) && strings.Contains(s, strconv.Itoa(v)) {
