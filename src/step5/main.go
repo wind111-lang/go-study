@@ -11,16 +11,30 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func removeFirstLast(strSlice []string) []string {
-	slice_remove := strSlice[1:4]
+	slice_remove := strSlice[1:4] //1番目から3番目までをのこす[n:m-1]
+	//この場合は[1:4-1]なので、実際には[1:3]
 	return slice_remove
 }
 
-func getAllNameAndAge(strSlice map[string]int) []string {
-	var namesort []string
-	return namesort
+func getAllNameAndAgeOrder(strSlice map[string]int) []string {
+	//キーのスライスを作成する
+	var keys []string
+	for key := range strSlice {
+		keys = append(keys, key) //配列に要素を追加
+	}
+	//キーをソートする
+	sort.Strings(keys)
+
+	//ソートしたスライスをforで回して繰り返しの順番を固定する
+	for i := 0; i < len(keys); i++ {
+		fmt.Println(keys[i], strSlice[keys[i]])
+	}
+
+	return keys
 }
 
 func main() {
@@ -34,12 +48,12 @@ func main() {
 		}
 	}
 	fmt.Println("--ARRAY--")
-	fmt.Println(arr)
+	fmt.Println(arr) //配列
 	fmt.Println("--SLICE--")
-	fmt.Println(slice)
+	fmt.Println(slice) //スライス
 
 	slice_r := [...]string{"0", "1", "2", "3", "4"}
-	fmt.Println(removeFirstLast(slice_r[:]))
+	fmt.Println(removeFirstLast(slice_r[:])) //先頭と末尾を取り除く
 
 	namelist := map[string]int{
 		"Taro":   12,
@@ -47,5 +61,5 @@ func main() {
 		"Saburo": 18,
 	}
 
-	getAllNameAndAge(namelist)
+	getAllNameAndAgeOrder(namelist)
 }
