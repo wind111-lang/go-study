@@ -10,7 +10,7 @@ import (
 	"strconv"
 )
 
-func FizzBuzz(num int) string { //intで代入して、結果はstringで返す
+func FizzBuzz(num int) string { //intで代入して結果はstringで返す
 	if num%3 == 0 && num%5 == 0 {
 		return "FizzBuzz"
 	} else if num%3 == 0 {
