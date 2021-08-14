@@ -3,7 +3,9 @@
 // ※変数を使ってるかどうか判定できてないので，変数を使うかはお前のモラル次第です
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	a := 5
