@@ -12,6 +12,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strconv"
 )
 
 func removeFirstLast(strSlice []string) []string {
@@ -29,12 +30,19 @@ func getAllNameAndAge(strSlice map[string]int) []string {
 	//キーをソートする
 	sort.Strings(keys)
 
-	//ソートしたスライスをforで回して繰り返しの順番を固定する
-	for i := 0; i < len(keys); i++ {
-		fmt.Println(keys[i], strSlice[keys[i]])
+	// ソートしたスライスをforで回して繰り返しの順番を固定する
+	// for i := 0; i < len(keys); i++ {
+	// 	fmt.Println(keys[i], strSlice[keys[i]])
+	// 	sort.Strings(keys)
+	// }
+
+	var sorted []string
+	for name, value := range strSlice {
+		sorted = append(sorted, name, strconv.Itoa(value))
+		fmt.Println(name, value)
 	}
 
-	return keys
+	return sorted
 }
 
 func main() {
