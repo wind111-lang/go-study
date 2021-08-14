@@ -19,5 +19,4 @@ func main() {
 	sayHello(name)
 	sayHello(name2)
 	sayHello(name3)
-
 }
