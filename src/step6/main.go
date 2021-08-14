@@ -6,5 +6,19 @@
 // 	number: "K99999"
 package main
 
+import "fmt"
+
+type list struct {
+	name   string
+	age    int
+	number string
+}
+
 func main() {
+	var profile list
+	profile.name = "wind111"
+	profile.age = 20
+	profile.number = "K20076"
+
+	fmt.Println(profile)
 }
