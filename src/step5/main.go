@@ -41,7 +41,6 @@ func getAllNameAndAge(strSlice map[string]int) []string {
 		sorted = append(sorted, name, strconv.Itoa(value))
 		fmt.Println(name, value)
 	}
-
 	return sorted
 }
 
