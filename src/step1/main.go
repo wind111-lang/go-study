@@ -4,7 +4,9 @@
 //   Hello Worldやhelloworldとかでも通ります．
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	fmt.Println("Hello World")
