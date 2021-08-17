@@ -36,7 +36,7 @@ func getAllNameAndAge(strSlice map[string]int) []string {
 	// 	sort.Strings(keys)
 	// }
 
-	//TODO: 順にソーティングして,それをreturnしたい
+	//TODO: 順にソーティングして,それをreturnしたい, range Iteration is random
 	var sorted []string
 	for name, value := range strSlice {
 		sorted = append(sorted, name, strconv.Itoa(value))
