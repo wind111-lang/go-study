@@ -24,5 +24,51 @@
 
 package main
 
+////////////Interface////////////
+type human interface {
+	fight() human
+}
+
+func fight(h human) {
+
+}
+
+////////////strongMan////////////
+type strongMan struct {
+	money int
+	power int
+}
+
+func (enemy strongMan) battle() {
+
+}
+
+func (enemy strongMan) getMoney() int {
+	return enemy.money
+}
+
+func (enemy strongMan) getPower() int {
+	return enemy.power
+}
+
+//////////////otaku//////////////
+type otaku struct {
+	money int
+	anime string
+}
+
+func (you otaku) battle() {
+
+}
+
+func (you otaku) getMoney() int {
+	return you.money
+}
+
+func (you otaku) getAnime() string {
+	return you.anime
+}
+
+//////////////main////////////////
 func main() {
 }
