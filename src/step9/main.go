@@ -24,6 +24,7 @@
 
 package main
 
+<<<<<<< HEAD
 ////////////Interface////////////
 type human interface {
 	fight() human
@@ -31,6 +32,17 @@ type human interface {
 
 func fight(h human) {
 
+=======
+import "fmt"
+
+////////////Interface////////////
+type human interface {
+	battle()
+}
+
+func fight(h human) {
+	h.battle()
+>>>>>>> 6416be3 (step9:ok)
 }
 
 ////////////strongMan////////////
@@ -39,6 +51,7 @@ type strongMan struct {
 	power int
 }
 
+<<<<<<< HEAD
 func (enemy strongMan) battle() {
 
 }
@@ -48,6 +61,18 @@ func (enemy strongMan) getMoney() int {
 }
 
 func (enemy strongMan) getPower() int {
+=======
+func (enemy *strongMan) battle() {
+	enemy.money += 100
+	fmt.Println("My power is", enemy.getPower())
+}
+
+func (enemy *strongMan) getMoney() int {
+	return enemy.money
+}
+
+func (enemy *strongMan) getPower() int {
+>>>>>>> 6416be3 (step9:ok)
 	return enemy.power
 }
 
@@ -57,6 +82,7 @@ type otaku struct {
 	anime string
 }
 
+<<<<<<< HEAD
 func (you otaku) battle() {
 
 }
@@ -66,9 +92,43 @@ func (you otaku) getMoney() int {
 }
 
 func (you otaku) getAnime() string {
+=======
+func (you *otaku) battle() {
+	you.money -= 100
+	if you.getMoney() <= 0 {
+		you.money = 0
+	}
+	fmt.Println("My favorite anime is ", you.getAnime())
+}
+
+func (you *otaku) getMoney() int {
+	return you.money
+}
+
+func (you *otaku) getAnime() string {
+>>>>>>> 6416be3 (step9:ok)
 	return you.anime
 }
 
 //////////////main////////////////
 func main() {
+	var enemy strongMan
+	var you otaku
+
+	enemy.money = 100
+	enemy.power = 200
+
+	you.money = 500
+	you.anime = "Dance Dance Revolution"
+
+	// fmt.Println(enemy.getMoney(), enemy.getPower())
+	// enemy.battle()
+	// fmt.Println(enemy.getMoney(), enemy.getPower())
+
+	// fmt.Println(you.getMoney(), you.getAnime())
+	// you.battle()
+	// fmt.Println(you.getMoney(), you.getAnime())
+
+	fight(&enemy)
+	fight(&you)
 }

@@ -41,8 +41,8 @@ func Test_main(t *testing.T) {
 		anime: "One Piece",
 	}
 	out := testutil.ExtractStdout(t, func() { fight(&s) })
-	if !strings.Contains(out, strconv.Itoa(s.getMoney())) {
-		t.Errorf("Expected %d, but got %s", s.getMoney(), out)
+	if !strings.Contains(out, strconv.Itoa(s.getPower())) {
+		t.Errorf("Expected %d, but got %s", s.getPower(), out)
 	}
 	out = testutil.ExtractStdout(t, func() { fight(&o) })
 	if !strings.Contains(out, o.getAnime()) {
