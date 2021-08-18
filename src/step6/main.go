@@ -20,5 +20,7 @@ func main() {
 	profile.age = 20
 	profile.number = "K20076"
 
-	fmt.Println(profile)
+	fmt.Println(profile.name)
+	fmt.Println(profile.age)
+	fmt.Println(profile.number)
 }
