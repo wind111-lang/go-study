@@ -24,15 +24,6 @@
 
 package main
 
-<<<<<<< HEAD
-////////////Interface////////////
-type human interface {
-	fight() human
-}
-
-func fight(h human) {
-
-=======
 import "fmt"
 
 ////////////Interface////////////
@@ -42,7 +33,6 @@ type human interface {
 
 func fight(h human) {
 	h.battle()
->>>>>>> 6416be3 (step9:ok)
 }
 
 ////////////strongMan////////////
@@ -51,17 +41,6 @@ type strongMan struct {
 	power int
 }
 
-<<<<<<< HEAD
-func (enemy strongMan) battle() {
-
-}
-
-func (enemy strongMan) getMoney() int {
-	return enemy.money
-}
-
-func (enemy strongMan) getPower() int {
-=======
 func (enemy *strongMan) battle() {
 	enemy.money += 100
 	fmt.Println("My power is", enemy.getPower())
@@ -72,7 +51,6 @@ func (enemy *strongMan) getMoney() int {
 }
 
 func (enemy *strongMan) getPower() int {
->>>>>>> 6416be3 (step9:ok)
 	return enemy.power
 }
 
@@ -82,17 +60,6 @@ type otaku struct {
 	anime string
 }
 
-<<<<<<< HEAD
-func (you otaku) battle() {
-
-}
-
-func (you otaku) getMoney() int {
-	return you.money
-}
-
-func (you otaku) getAnime() string {
-=======
 func (you *otaku) battle() {
 	you.money -= 100
 	if you.getMoney() <= 0 {
@@ -106,7 +73,6 @@ func (you *otaku) getMoney() int {
 }
 
 func (you *otaku) getAnime() string {
->>>>>>> 6416be3 (step9:ok)
 	return you.anime
 }
 
