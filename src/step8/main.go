@@ -18,19 +18,19 @@ type student struct {
 	number string
 }
 
-func (name student) getName() string {
+func (name *student) getName() string {
 	return name.name
 }
 
-func (age student) getAge() int {
+func (age *student) getAge() int {
 	return age.age
 }
 
-func (num student) getNumber() string {
+func (num *student) getNumber() string {
 	return num.number
 }
 
-func (student student) selfIntroduction() string {
+func (student *student) selfIntroduction() string {
 	introduction := "Hi! I'm " + student.getName() + ". " + strconv.Itoa(student.getAge()) + " years old. My number is " + student.getNumber() + "."
 	return introduction
 }
