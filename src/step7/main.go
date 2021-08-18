@@ -16,7 +16,8 @@ func birthDay(age *int) {
 
 func main() {
 	var age int = 20
-	fmt.Println(age)
+	fmt.Println(age, &age)
+	p := &age
+	fmt.Println(p, *p)
 	birthDay(&age)
-	//fmt.Println(birthDay(age_p))
 }
