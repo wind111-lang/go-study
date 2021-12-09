@@ -5,5 +5,19 @@
 // ※birthDay関数は値をreturnしてはいけません．
 package main
 
+import (
+	"fmt"
+)
+
+func birthDay(age *int) {
+	*age += 1
+	fmt.Println(*age)
+}
+
 func main() {
+	var age int = 20
+	fmt.Println(age, &age)
+	p := &age
+	fmt.Println(p, *p)
+	birthDay(&age)
 }

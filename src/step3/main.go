@@ -3,6 +3,20 @@
 // returnする，sayHelloという関数を制作してください．
 package main
 
-func main() {
+import (
+	"fmt"
+)
 
+func sayHello(name string) string {
+	a := "Hello," + name
+	fmt.Println(a)
+	return a
+}
+func main() {
+	name := "Go"
+	name2 := "Rust"
+	name3 := "Python"
+	sayHello(name)
+	sayHello(name2)
+	sayHello(name3)
 }

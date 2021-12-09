@@ -11,17 +11,57 @@ package main
 
 import (
 	"fmt"
+	"sort"
+	"strconv"
 )
 
 func removeFirstLast(strSlice []string) []string {
-	slice_remove := strSlice[1:4]
+	slice_remove := strSlice[1:4] //1番目から3番目までをのこす[n:m-1]
+	//この場合は[1:4-1]なので、実際には[1:3]
+
+	// for i, _ := range strSlice{
+	// 	i(i != 0 && i != 3{
+	// 	slice_remove = append(slice_remove, slice_remove[i])
+	// 	}
+	// }
 	return slice_remove
 }
 
-// func getAllNameAndAge(strSlice map[string]int) []string {
-// 	str := [5]string{"1","2","3","4","5"}
-// 	return str
-// }
+func getAllNameAndAge(strSlice map[string]int) []string {
+	// //キーのスライスを作成する
+	var keys []string
+	// for key := range strSlice {
+	// 	keys = append(keys, key) //配列に要素を追加
+	// }
+	// //キーをソートする
+	// sort.Strings(keys)
+
+	// // ソートしたスライスをforで回して繰り返しの順番を固定する
+	// // for i := 0; i < len(keys); i++ {
+	// // 	fmt.Println(keys[i], strSlice[keys[i]])
+	// // 	sort.Strings(keys)
+	// // }
+
+	// //TODO: 順にソーティングして,それをreturnしたい
+	// var sorted []string
+	// for name, value := range strSlice {
+	// 	sorted = append(sorted, name, strconv.Itoa(value))
+	// 	fmt.Println(name, value)
+	// }
+	// return sorted
+
+	//↑↑変に考えすぎて無駄すぎることをやっていた、アホかコイツ？？//
+
+	list := make([]string, 0)
+
+	for key, val := range strSlice {
+		list = append(list, key+strconv.Itoa(val))
+	}
+
+	sort.Strings(list)
+
+	return list
+}
 
 func main() {
 	arr := [3]int{0, 1, 2}     //配列
@@ -34,10 +74,23 @@ func main() {
 		}
 	}
 	fmt.Println("--ARRAY--")
-	fmt.Println(arr)
+	fmt.Println(arr) //配列
 	fmt.Println("--SLICE--")
-	fmt.Println(slice)
+	fmt.Println(slice) //スライス
 
 	slice_r := [...]string{"0", "1", "2", "3", "4"}
-	fmt.Println(removeFirstLast(slice_r[:]))
+	fmt.Println(removeFirstLast(slice_r[:])) //先頭と末尾を取り除く
+
+	namelist := map[string]int{
+		"Taro":   12,
+		"Jiro":   19,
+		"Saburo": 18,
+	}
+
+	//people := make(map[string]int , 0)
+	//people["Taro"] = 12
+	//people["Jiro"] = 19
+	//people["Saburo"] = 18
+
+	getAllNameAndAge(namelist)
 }
